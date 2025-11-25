@@ -28,9 +28,9 @@ def update_streak(metric, amount):
 def main():
     context = zmq.Context()
     socket = context.socket(zmq.REP)
-    socket.bind("tcp://*:5556")
+    socket.bind("tcp://*:5558")
 
-    print("Achievement Microservice running on tcp://*:5556")
+    print("Achievement Microservice running on tcp://*:5558")
 
     while True:
         message = socket.recv_json()
