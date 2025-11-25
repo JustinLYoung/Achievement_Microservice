@@ -21,9 +21,9 @@ def update_streak(metric, amount):
 
     if streak[key] >= thresholds.get(metric):
         streak[key] = 0
-        return {"message": f"Reward unlocked: {thresholds[metric]} {metric}!"}
+        return {"award": True, "message": f"Reward unlocked: {thresholds[metric]} {metric}!"}
     
-    return {"message": "No award, keep trying"}
+    return {"award": False, "message": "No award, keep trying"}
 
 def main():
     context = zmq.Context()
